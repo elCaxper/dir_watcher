@@ -24,9 +24,6 @@ void Watcher::print() {
 }
 
 void Watcher::add_path_monitor(const fs::path &path) {
-    mFsPath.push_back(path);
-    mFsPath.pop_back();
-
 
 }
 
@@ -145,7 +142,7 @@ std::vector<std::string> Watcher::get_files( const fs::path &path){
         return vs;
         //return pathFilter;
 }
- 
+
 //TODO: there is a seg fault when we remove a file.
 void Watcher::start(const std::function<void (std::string, FileStatus)> &action) {
          while(running_) {
